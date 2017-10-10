@@ -9,10 +9,12 @@ for ( x in projects ) {
   def proj = x
   builders[proj] = {
     node('hpc-test-node') {
-       stage 'SCM checkout'
-       checkout scm
-       stage 'Running job'
-       sh test_pipeline.sh do_job ${proj}
+      stage 'SCM checkout' {
+        checkout scm
+      }
+      stage 'Running job' {
+        sh test_pipeline.sh do_job ${proj}
+      }
     }
   }
   
