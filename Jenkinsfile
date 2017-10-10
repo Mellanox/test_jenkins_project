@@ -8,7 +8,7 @@ def builders = [:]
 for ( x in projects ) {
   def proj = x
   builders[proj] = {
-    node(hpc-test-node) {
+    node('hpc-test-node') {
        sh test_pipeline.sh do_job ${proj}
     }
   }
