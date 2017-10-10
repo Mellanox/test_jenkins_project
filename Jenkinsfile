@@ -13,7 +13,7 @@ for ( x in projects ) {
         checkout scm
       }
       stage ('Running job') {
-        sh test_pipeline.sh do_job ${proj}
+        sh "test_pipeline.sh do_job ${proj}"
       }
     }
   }
