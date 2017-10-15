@@ -2,7 +2,7 @@ action=$1
 job=$2
 
 function get_job_list () {
-  echo "a b c d e"
+  echo "['a','b','c','d']"
 }
 
 function do_job () {
