@@ -14,6 +14,7 @@ stage ("Get project list") {
 }
 
 def builders = [:]
+echo "Test"
 
 for ( x in projects ) {
   def proj = x
