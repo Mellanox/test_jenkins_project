@@ -1,7 +1,13 @@
 def nodes = ['hpc-test-node', 'hpc-test-node2'] 
 //git url: 'https://github.com/Mellanox/test_jenkins_projec'
 //def projects = sh test_pipeline.sh get_job_list
-def projects = ['a','b','c','d']
+//def projects = ['a','b','c','d']
+
+
+
+stage ("Get project list") {
+  def projects = sh "./test_pipeline.sh get_job_list"
+}
 
 def builders = [:]
 
@@ -13,6 +19,7 @@ for ( x in projects ) {
         checkout scm
       }
       stage ('Running job') {
+        sh "hostname"
         sh "./test_pipeline.sh do_job ${proj}"
       }
     }
