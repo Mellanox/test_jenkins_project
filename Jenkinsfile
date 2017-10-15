@@ -9,7 +9,7 @@ stage ("Get project list") {
   node () {
     sh "hostname"
     checkout scm
-    def projects = sh "./test_pipeline.sh get_job_list"
+    projects = sh "./test_pipeline.sh get_job_list"
   }
 }
 
