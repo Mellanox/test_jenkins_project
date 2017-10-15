@@ -7,6 +7,8 @@ def nodes = ['hpc-test-node', 'hpc-test-node2']
 
 stage ("Get project list") {
   node () {
+    sh "hostname"
+    checkout scm
     def projects = sh "./test_pipeline.sh get_job_list"
   }
 }
